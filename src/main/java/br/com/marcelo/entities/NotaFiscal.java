@@ -1,28 +1,38 @@
 package br.com.marcelo.entities;
 
-import java.math.BigDecimal;
-
 public class NotaFiscal {
 
     // private double valor;
-    private BigDecimal valorAluguel;
-    private BigDecimal valorImposto;
+    private double valorAluguel;
+    private double valorImposto;
 
-    public NotaFiscal(BigDecimal valorAluguel, BigDecimal valorImposto) {
+    public NotaFiscal() {
+    }
+
+    public NotaFiscal(double valorAluguel, double valorImposto) {
         this.valorAluguel = valorAluguel;
         this.valorImposto = valorImposto;
     }
 
-    public BigDecimal getValorAluguel() {
+    public double getValorAluguel() {
         return valorAluguel;
     }
 
-    public BigDecimal getValorImposto() {
+    public double getValorImposto() {
         return valorImposto;
     }
 
-    public BigDecimal getValorTotal() {
+    public double getValorTotal() {
         // return valorAluguel + valorImposto;
-        return valorAluguel.add(valorImposto);
+        return valorAluguel + valorImposto;
+    }
+
+    @Override
+    public String toString() {
+        return "NotaFiscal{" +
+                "valorAluguel=" + valorAluguel +
+                ", valorImposto=" + valorImposto +
+                ", valorTotal= " + getValorTotal() +
+                '}';
     }
 }
